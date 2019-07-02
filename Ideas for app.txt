@@ -1,0 +1,6 @@
+New features for food app:
+
+	▪	Comment system
+	▪	Finding an average star rating based on multiple user reviews e.g show distribution of different star ratings
+	▪	Hyperlink to restaurant/recipe
+	▪	
