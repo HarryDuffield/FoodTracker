@@ -1,0 +1,20 @@
+Plans:
+Comments on the food
+Ingredients list
+Rate other things (places, pets)?
+Different menus for different restaurants
+Add an option to take photos of the food instead of only from the gallery
+Drinks?
+Allergy information(could automatically update based on the ingredients and a list of known allergens in foods)?
+Add a section for recipes
+Add a link to open maps to find restaurants
+Filter by type/allergies
+Price of ingredients/ meals
+Links to buy ingredients(from a list of websites or automatic searching)?
+Add most recently viewed items to the top of the list
+Have more than one picture
+Other links on the pages
+Individual profiles for each meal
+A separate read only app to see the information as a customer
+Some form of online database
+
