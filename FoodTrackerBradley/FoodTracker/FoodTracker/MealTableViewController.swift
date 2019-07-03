@@ -117,6 +117,7 @@ class MealTableViewController: UITableViewController {
         cell.nameLabel.text = meal.name
         cell.photoImageView.image = meal.photo
         cell.ratingControl.rating = meal.rating
+        cell.descLabel.text = meal.desc
         
         return cell
     

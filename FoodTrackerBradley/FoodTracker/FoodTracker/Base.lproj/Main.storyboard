@@ -56,6 +56,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="descLabel" destination="r1z-lq-Lfp" id="dFM-ea-Hbn"/>
                                     <outlet property="nameLabel" destination="VMh-vC-7sY" id="Mh2-T8-NMD"/>
                                     <outlet property="photoImageView" destination="Kwg-u0-qA2" id="a7P-On-9QZ"/>
                                     <outlet property="ratingControl" destination="2wS-Vc-XzA" id="7lY-ff-LBk"/>

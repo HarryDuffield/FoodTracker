@@ -62,7 +62,7 @@ class Meal: NSObject, NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(photo, forKey: PropertyKey.photo)
-        aCoder.encode(rating, forKey: PropertyKey.rating)
+        aCoder.encode(self.rating, forKey: PropertyKey.rating)
         aCoder.encode(desc, forKey: PropertyKey.rating)
     }
     
@@ -83,6 +83,8 @@ class Meal: NSObject, NSCoding {
         
         // Because photo is an optional property of Meal, just use conditional cast.
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
+        
+        let ratingObj = aDecoder.decodeObject(forKey: PropertyKey.rating)
         
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
         
