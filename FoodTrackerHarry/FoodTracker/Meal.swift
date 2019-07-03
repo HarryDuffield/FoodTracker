@@ -18,16 +18,18 @@ class Meal: NSObject, NSCoding {
         static let name = "name"
         static let photo = "photo"
         static let rating = "rating"
+        static let desc = "desc"
         
     }
     
     var name: String
     var photo: UIImage?
     var rating: Int
+    var desc: String
 
     //MARK: Initialization
     
-    init?(name: String, photo: UIImage?, rating: Int) {
+    init?(name: String, photo: UIImage?, rating: Int, desc: String) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -43,6 +45,7 @@ class Meal: NSObject, NSCoding {
         self.name = name
         self.photo = photo
         self.rating = rating
+        self.desc = desc
     }
     
     func encode(with aCoder: NSCoder) {
@@ -50,6 +53,7 @@ class Meal: NSObject, NSCoding {
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(photo, forKey: PropertyKey.photo)
         aCoder.encode(rating, forKey: PropertyKey.rating)
+        aCoder.encode(desc, forKey: PropertyKey.desc)
         
     }
     
@@ -66,8 +70,10 @@ class Meal: NSObject, NSCoding {
         
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
         
+        let desc = aDecoder.decodeObject(forKey: PropertyKey.desc)
+        
         // Must call designated initializer.
-        self.init(name: name, photo: photo, rating: rating)
+        self.init(name: name, photo: photo, rating: rating, desc: desc as! String)
         
     }
     
