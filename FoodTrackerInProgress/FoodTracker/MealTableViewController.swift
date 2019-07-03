@@ -164,16 +164,22 @@ class MealTableViewController: UITableViewController {
         let photo2 = UIImage(named: "meal2")
         let photo3 = UIImage(named: "meal3")
         
+        let recipe1 = Recipe(instructions: ["put leaf in bowl", "eat bowl"], ingredients: [Ingredient(name: "leaf", unit: nil, amount: 10), Ingredient(name: "other leaves", unit: .g, amount: 4)])
         
-        guard let meal1 = Meal(name: "Caprese Salad", photo: photo1, rating: 4, desc: "yummy") else {
+        let recipe2 = Recipe(instructions: ["put leaf in bowl", "eat bowl"], ingredients: [Ingredient(name: "leaf", unit: nil, amount: 10), Ingredient(name: "other leaves", unit: .g, amount: 4)])
+        
+        let recipe3 = Recipe(instructions: ["put leaf in bowl", "eat bowl"], ingredients: [Ingredient(name: "leaf", unit: nil, amount: 10), Ingredient(name: "other leaves", unit: .g, amount: 4)])
+        
+        
+        guard let meal1 = Meal(name: "Caprese Salad", photo: photo1, rating: 4, desc: "yummy", recipe: recipe1) else {
             fatalError("Unable to instantiate meal1")
         }
         
-        guard let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5, desc: "slirp") else {
+        guard let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5, desc: "slirp", recipe: recipe2) else {
             fatalError("Unable to instantiate meal2")
         }
         
-        guard let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3, desc: "E") else {
+        guard let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3, desc: "E", recipe: recipe3) else {
             fatalError("Unable to instantiate meal2")
         }
         

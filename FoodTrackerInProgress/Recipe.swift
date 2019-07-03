@@ -7,24 +7,26 @@
 
 import UIKit
 
-enum units {
+enum Unit {
     case kg
     case g
     case l
     case ml
-    case eggs
     case tblsp
     case cups
     case oz
     case lb
 }
 
-class ingredient {
-    var name: String?
-    var unit: units?
+struct Ingredient {
+    var name: String
+    var unit: Unit?
+    var amount: Int
 }
 
-class Recipe {
+struct Recipe {
     var instructions: [String] = []
-    var ingredients: [ingredient] = []
+    var ingredients: [Ingredient] = []
 }
+
+
