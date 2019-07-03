@@ -11,6 +11,7 @@ import os.log
 class MealViewController: UIViewController , UITextFieldDelegate , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var descTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -33,6 +34,7 @@ class MealViewController: UIViewController , UITextFieldDelegate , UIImagePicker
             nameTextField.text = meal.name
             photoImageView.image = meal.photo
             ratingControl.rating = meal.rating
+            descTextField.text = meal.desc
         }
         
         // Enable the Save button only if the text field has a valid Meal name.
@@ -124,9 +126,10 @@ class MealViewController: UIViewController , UITextFieldDelegate , UIImagePicker
         let name = nameTextField.text ?? ""
         let photo = photoImageView.image
         let rating = ratingControl.rating
+        let desc = descTextField.text
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        meal = Meal(name: name, photo: photo, rating: rating, desc: "")
+        meal = Meal(name: name, photo: photo, rating: rating, desc: desc ?? "")
         
     }
     

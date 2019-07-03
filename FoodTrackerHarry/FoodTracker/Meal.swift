@@ -25,7 +25,7 @@ class Meal: NSObject, NSCoding {
     var name: String
     var photo: UIImage?
     var rating: Int
-    var desc: String
+    var desc: String?
 
     //MARK: Initialization
     
@@ -70,10 +70,10 @@ class Meal: NSObject, NSCoding {
         
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
         
-        let desc = aDecoder.decodeObject(forKey: PropertyKey.desc)
+        let desc = aDecoder.decodeObject(forKey: PropertyKey.desc) as? String
         
         // Must call designated initializer.
-        self.init(name: name, photo: photo, rating: rating, desc: desc as! String)
+        self.init(name: name, photo: photo, rating: rating, desc: desc ?? "No Description")
         
     }
     

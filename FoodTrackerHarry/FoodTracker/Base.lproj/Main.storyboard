@@ -89,8 +89,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4cD-Hw-Iih">
-                                <rect key="frame" x="0.0" y="108" width="414" height="416"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4cD-Hw-Iih">
+                                <rect key="frame" x="0.0" y="108" width="414" height="448"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PR6-MY-9oc">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
@@ -108,17 +108,26 @@
                                             <outletCollection property="gestureRecognizers" destination="YGi-Wu-x9d" appends="YES" id="1ma-hK-Od0"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="k2m-9k-6Jc" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="81" y="366" width="252" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="k2m-9k-6Jc" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                        <rect key="frame" x="81" y="366" width="252" height="44"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="starCount">
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Description." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nlS-TD-nho">
+                                        <rect key="frame" x="0.0" y="418" width="414" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="nlS-TD-nho" firstAttribute="leading" secondItem="4cD-Hw-Iih" secondAttribute="leading" id="GVV-xt-Lrk"/>
                                     <constraint firstAttribute="trailing" secondItem="PR6-MY-9oc" secondAttribute="trailing" id="d5y-TI-uYc"/>
+                                    <constraint firstAttribute="trailing" secondItem="nlS-TD-nho" secondAttribute="trailing" id="u54-FL-hRC"/>
+                                    <constraint firstAttribute="bottom" secondItem="nlS-TD-nho" secondAttribute="bottom" id="uN6-pN-Hmt"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -143,6 +152,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descTextField" destination="nlS-TD-nho" id="1WB-gF-jcu"/>
                         <outlet property="nameTextField" destination="PR6-MY-9oc" id="dgK-Ze-5hf"/>
                         <outlet property="photoImageView" destination="WZe-hc-rvE" id="FJL-GA-1B4"/>
                         <outlet property="ratingControl" destination="k2m-9k-6Jc" id="5vJ-mQ-cKe"/>
@@ -157,7 +167,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1687" y="110"/>
+            <point key="canvasLocation" x="1686.9565217391305" y="109.82142857142857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aZU-NM-fSN">
