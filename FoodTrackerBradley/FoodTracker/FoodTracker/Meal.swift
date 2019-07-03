@@ -75,21 +75,22 @@ class Meal: NSObject, NSCoding {
         }
         
         // The description is required.
-        guard let desc = aDecoder.decodeObject(forKey: PropertyKey.name) as? String
-            else {
+        /*guard*/ let desc = aDecoder.decodeObject(forKey: PropertyKey.desc)
+        /*    else {
                 os_log("Unable to decode the description for a Meal object.", log: OSLog.default, type: .debug)
                 return nil
-        }
+        }*/
         
         // Because photo is an optional property of Meal, just use conditional cast.
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
         
-        let ratingObj = aDecoder.decodeObject(forKey: PropertyKey.rating)
+        //let ratingObj = aDecoder.decodeObject(forKey: PropertyKey.rating)
         
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
         
+        
         // Must call designated initializer
-        self.init(name: name, photo: photo, rating: rating, desc: desc)
+        self.init(name: name, photo: photo, rating: rating, desc: desc as! String)
         
     }
 }

@@ -33,6 +33,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             nameTextField.text = meal.name
             photoImageView.image = meal.photo
             ratingControl.rating = meal.rating
+            descriptionTextView.text = meal.desc
         }
         
         // Enable the Save button only if the text field has a valid Meal name.
@@ -136,10 +137,11 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let name = nameTextField.text ?? ""
         let photo = photoImageView.image
         let rating = ratingControl.rating
-        let desc = descriptionTextView.text ?? ""
+        let desc = descriptionTextView.text
         
         //Set the meal to be passed to MealTableViewController after the unwind segue.
-        meal = Meal(name: name, photo: photo, rating: rating, desc: desc)
+        meal = Meal(name: name, photo: photo, rating: rating, desc: desc ?? " ")
+        print(meal?.name)
     }
     
     //MARK: Actions
@@ -163,11 +165,11 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     private func updateSaveButtonState() {
         
-        return
-        
         // Disable the Save button if the text field is empty.
         let text = nameTextField.text ?? ""
         saveButton.isEnabled = !text.isEmpty
+        
+        return
         
         // Disable the Save button if the description is empty.
         let desc = descriptionTextView.text ?? ""
