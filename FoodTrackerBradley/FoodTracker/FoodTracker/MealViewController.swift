@@ -16,6 +16,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var descriptionTextView: UITextView!
     /*
  This value is either passed by 'MealTableViewController' in 'prepare(for:sender)' or constructed as part of adding a new meal. */
     var meal: Meal?
@@ -47,12 +48,40 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // Disable the Save button while editing.
-        saveButton.isEnabled = false
+//        saveButton.isEnabled = false
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
         navigationItem.title = textField.text
+    }
+    
+    //MARK: UITextViewDelegate
+    func textViewShouldReturn(_ textView: UITextView) -> Bool {
+        // Hide the keyboard.
+        textView.resignFirstResponder()
+        return true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        //Disable save button while editing
+//        saveButton.isEnabled = false
+        
+        // If placeholder text still there, remove it
+        if descriptionTextView.textColor == UIColor.lightGray {
+            descriptionTextView.text = nil
+            descriptionTextView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        updateSaveButtonState()
+        
+        // If there's no text, add the placeholder text.
+        if descriptionTextView.text.isEmpty{
+            descriptionTextView.text = ("Enter a description.")
+            descriptionTextView.textColor = UIColor.lightGray
+        }
     }
     
     //MARK: UIImagePickerControllerDelegate
@@ -107,9 +136,10 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let name = nameTextField.text ?? ""
         let photo = photoImageView.image
         let rating = ratingControl.rating
+        let desc = descriptionTextView.text ?? ""
         
         //Set the meal to be passed to MealTableViewController after the unwind segue.
-        meal = Meal(name: name, photo: photo, rating: rating)
+        meal = Meal(name: name, photo: photo, rating: rating, desc: desc)
     }
     
     //MARK: Actions
@@ -132,9 +162,16 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     //MARK: Private Methods
     
     private func updateSaveButtonState() {
+        
+        return
+        
         // Disable the Save button if the text field is empty.
         let text = nameTextField.text ?? ""
         saveButton.isEnabled = !text.isEmpty
+        
+        // Disable the Save button if the description is empty.
+        let desc = descriptionTextView.text ?? ""
+        saveButton.isEnabled = !desc.isEmpty
     }
 }
 
