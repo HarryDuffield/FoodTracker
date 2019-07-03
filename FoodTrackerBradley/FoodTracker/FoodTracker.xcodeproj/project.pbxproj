@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		092B359A22CCE017007DA750 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092B359922CCE017007DA750 /* Recipe.swift */; };
 		09D3B24822CA07E700F6CDC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D3B24722CA07E700F6CDC4 /* AppDelegate.swift */; };
 		09D3B24A22CA07E700F6CDC4 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D3B24922CA07E700F6CDC4 /* MealViewController.swift */; };
 		09D3B24D22CA07E700F6CDC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D3B24B22CA07E700F6CDC4 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		092B359922CCE017007DA750 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		09D3B24422CA07E700F6CDC4 /* FoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D3B24722CA07E700F6CDC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09D3B24922CA07E700F6CDC4 /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				09D3B24E22CA07E800F6CDC4 /* Assets.xcassets */,
 				09D3B25022CA07E800F6CDC4 /* LaunchScreen.storyboard */,
 				09D3B25322CA07E800F6CDC4 /* Info.plist */,
+				092B359922CCE017007DA750 /* Recipe.swift */,
 			);
 			path = FoodTracker;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			files = (
 				09D3B26C22CB5A0600F6CDC4 /* Meal.swift in Sources */,
 				09D3B24A22CA07E700F6CDC4 /* MealViewController.swift in Sources */,
+				092B359A22CCE017007DA750 /* Recipe.swift in Sources */,
 				09D3B26A22CA4B0800F6CDC4 /* RatingControl.swift in Sources */,
 				09D3B24822CA07E700F6CDC4 /* AppDelegate.swift in Sources */,
 				09D3B27022CB67E600F6CDC4 /* MealTableViewController.swift in Sources */,
