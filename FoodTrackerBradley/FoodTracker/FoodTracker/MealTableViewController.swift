@@ -31,6 +31,7 @@ class MealTableViewController: UITableViewController {
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
             saveMeals()
+            tableView.reloadData()
         }
     }
     
