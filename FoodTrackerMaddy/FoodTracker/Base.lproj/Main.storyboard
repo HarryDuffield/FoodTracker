@@ -129,11 +129,19 @@
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="ojW-Wv-oua"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nVB-UN-ffW">
-                            <connections>
-                                <segue destination="P03-Bg-Ehg" kind="unwind" unwindAction="unwindToMealListWithSender:" id="VkE-v8-j0u"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="nVB-UN-ffW"/>
+                            <barButtonItem style="plain" id="8eU-1S-MU2">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uX7-fW-J2r">
+                                    <rect key="frame" x="302" y="7" width="47" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Recipe"/>
+                                    <connections>
+                                        <segue destination="BwR-im-5f2" kind="show" id="D64-ei-am9"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="dip-4R-8nc" id="ozQ-jU-OK4"/>
@@ -143,7 +151,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="P03-Bg-Ehg" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="Lbw-YI-cdG">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="IyW-LB-56D"/>
@@ -151,6 +158,50 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="986.95652173913049" y="-335.49107142857139"/>
+        </scene>
+        <!--Recipe-->
+        <scene sceneID="Moh-0D-VTZ">
+            <objects>
+                <viewController id="BwR-im-5f2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jrv-Dn-5Z0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="6E5-6i-7yA" customClass="Ingredient">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Ingredients" id="1vo-PV-FFy">
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="mIY-Zq-wH6">
+                                            <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="kc2-ze-Nh5">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Instructions" id="7jc-jZ-4j5">
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="pyX-tr-ktb">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xF9-aq-6S2"/>
+                        <connections>
+                            <outlet property="addIngredient" destination="mIY-Zq-wH6" id="1pk-ce-CQt"/>
+                            <outlet property="addInstruction" destination="pyX-tr-ktb" id="ABa-CK-VfW"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Recipe" id="2uF-Kx-p3f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o6E-fR-lJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1999" y="-271"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yF4-x8-J1H">

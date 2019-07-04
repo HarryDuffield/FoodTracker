@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C01F3FAA22CCFEDA002BF153 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F3FA922CCFEDA002BF153 /* Recipe.swift */; };
 		C0CB51DC22CA07B200157F41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CB51DB22CA07B200157F41 /* AppDelegate.swift */; };
 		C0CB51DE22CA07B200157F41 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CB51DD22CA07B200157F41 /* MealViewController.swift */; };
 		C0CB51E122CA07B200157F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CB51DF22CA07B200157F41 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C01F3FA922CCFEDA002BF153 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		C0CB51D822CA07B200157F41 /* FoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0CB51DB22CA07B200157F41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0CB51DD22CA07B200157F41 /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				C0CB51DD22CA07B200157F41 /* MealViewController.swift */,
 				C0CB51FB22CA492A00157F41 /* RatingControl.swift */,
 				C0CB51FD22CB486900157F41 /* Meal.swift */,
+				C01F3FA922CCFEDA002BF153 /* Recipe.swift */,
 				C0CB51DF22CA07B200157F41 /* Main.storyboard */,
 				C0CB51FF22CB56DA00157F41 /* MealTableViewCell.swift */,
 				C0CB520122CB5ACA00157F41 /* MealTableViewController.swift */,
@@ -211,6 +214,7 @@
 			files = (
 				C0CB51FE22CB486900157F41 /* Meal.swift in Sources */,
 				C0CB51DE22CA07B200157F41 /* MealViewController.swift in Sources */,
+				C01F3FAA22CCFEDA002BF153 /* Recipe.swift in Sources */,
 				C0CB51FC22CA492A00157F41 /* RatingControl.swift in Sources */,
 				C0CB51DC22CA07B200157F41 /* AppDelegate.swift in Sources */,
 				C0CB520222CB5ACA00157F41 /* MealTableViewController.swift in Sources */,
