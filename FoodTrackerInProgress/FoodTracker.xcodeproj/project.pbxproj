@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A41CD53C22CCE80900D4ADF4 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41CD53B22CCE80900D4ADF4 /* Recipe.swift */; };
+		A4974AF222CDF8E00083E77B /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4974AF122CDF8E00083E77B /* RecipeViewController.swift */; };
 		A4CF1F1922CA07C900E4E1D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CF1F1822CA07C900E4E1D8 /* AppDelegate.swift */; };
 		A4CF1F1B22CA07C900E4E1D8 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CF1F1A22CA07C900E4E1D8 /* MealViewController.swift */; };
 		A4CF1F1E22CA07C900E4E1D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4CF1F1C22CA07C900E4E1D8 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		A41CD53B22CCE80900D4ADF4 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		A4974AF122CDF8E00083E77B /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		A4CF1F1522CA07C900E4E1D8 /* FoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4CF1F1822CA07C900E4E1D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4CF1F1A22CA07C900E4E1D8 /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				A4CF1F3A22CA5C0300E4E1D8 /* Meal.swift */,
 				A4CF1F3C22CB4BBB00E4E1D8 /* MealTableViewCell.swift */,
 				A4CF1F1C22CA07C900E4E1D8 /* Main.storyboard */,
+				A4974AF122CDF8E00083E77B /* RecipeViewController.swift */,
 				A4CF1F1F22CA07CB00E4E1D8 /* Assets.xcassets */,
 				A4CF1F2122CA07CB00E4E1D8 /* LaunchScreen.storyboard */,
 				A4CF1F2422CA07CB00E4E1D8 /* Info.plist */,
@@ -215,6 +218,7 @@
 				A4CF1F1B22CA07C900E4E1D8 /* MealViewController.swift in Sources */,
 				A41CD53C22CCE80900D4ADF4 /* Recipe.swift in Sources */,
 				A4CF1F3922CA497C00E4E1D8 /* RatingControl.swift in Sources */,
+				A4974AF222CDF8E00083E77B /* RecipeViewController.swift in Sources */,
 				A4CF1F1922CA07C900E4E1D8 /* AppDelegate.swift in Sources */,
 				A4CF1F3F22CB573E00E4E1D8 /* MealTableViewController.swift in Sources */,
 				A4CF1F3D22CB4BBB00E4E1D8 /* MealTableViewCell.swift in Sources */,

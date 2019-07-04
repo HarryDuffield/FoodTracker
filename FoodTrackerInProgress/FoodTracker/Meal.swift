@@ -27,11 +27,11 @@ class Meal: NSObject, NSCoding {
     var photo: UIImage?
     var rating: Int
     var desc: String?
-    var recipe: Recipe
+    var recipe: Recipe?
 
     //MARK: Initialization
     
-    init?(name: String, photo: UIImage?, rating: Int, desc: String, recipe: Recipe) {
+    init?(name: String, photo: UIImage?, rating: Int, desc: String, recipe: Recipe?) {
         
         // The name must not be empty
         guard !name.isEmpty else {

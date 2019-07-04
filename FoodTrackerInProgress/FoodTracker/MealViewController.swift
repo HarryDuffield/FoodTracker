@@ -15,6 +15,9 @@ class MealViewController: UIViewController , UITextFieldDelegate , UIImagePicker
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var recipeText: UILabel!
+    @IBOutlet weak var AddButton: UIButton!
+    @IBOutlet weak var DeleteRecipeButton: UIButton!
     
     /*
      This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
@@ -34,6 +37,7 @@ class MealViewController: UIViewController , UITextFieldDelegate , UIImagePicker
             nameTextField.text = meal.name
             photoImageView.image = meal.photo
             ratingControl.rating = meal.rating
+            ratingControl.currentR = meal.recipe
             descTextField.text = meal.desc
         }
         
@@ -127,6 +131,7 @@ class MealViewController: UIViewController , UITextFieldDelegate , UIImagePicker
         let photo = photoImageView.image
         let rating = ratingControl.rating
         let desc = descTextField.text
+        let recipe = ratingControl.currentR
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
         meal = Meal(name: name, photo: photo, rating: rating, desc: desc ?? "", recipe: recipe)

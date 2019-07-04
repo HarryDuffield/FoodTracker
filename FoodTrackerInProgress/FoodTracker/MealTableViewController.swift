@@ -13,6 +13,7 @@ class MealTableViewController: UITableViewController {
     //MARK: Properties
     
     var meals = [Meal]()
+    var currentRecipe: Recipe = Recipe(instructions: ["default1","default2"], ingredients: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +127,7 @@ class MealTableViewController: UITableViewController {
             
             let selectedMeal = meals[indexPath.row]
             mealDetailViewController.meal = selectedMeal
+            let currentRecipe: Recipe = (selectedMeal.recipe)!
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
