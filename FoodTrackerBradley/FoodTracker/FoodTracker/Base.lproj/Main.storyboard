@@ -344,6 +344,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ingredientTextField" destination="CIo-sh-WmL" id="KiH-y0-r0c"/>
+                        <outlet property="saveButton" destination="84q-bw-Dqy" id="kSe-2A-1gL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGx-3c-DMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8l4-al-Cd3" userLabel="Exit" sceneMemberID="exit"/>
