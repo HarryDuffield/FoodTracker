@@ -7,24 +7,48 @@
 //
 
 import UIKit
+import os.log
 
-class IngredientViewController: UIViewController {
-
+class IngredientViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
+    /*@IBAction func ingredientTextField(_ sender: Any) {
+    }*/
+    
+    //MARK: Properties
+    @IBOutlet weak var ingredientTextField: UITextField!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    var recipe: Recipe?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if let recipe = recipe {
+            
+        }
+        
     }
     
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        super.prepare(for: segue, sender: sender)
+        
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button wasn't pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let ingredients = ingredientTextField.text ?? ""
+        
+        recipe = Recipe(quantity: 0, units: "test", ingredients: ingredients)
+        print(recipe?.ingredients)
+        
     }
-    */
+    
+    
+    
 
 }

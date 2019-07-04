@@ -36,8 +36,8 @@ class RecipeViewController: UIViewController, UITextViewDelegate {
         
         super.prepare(for: segue, sender: sender)
         
-        let ingredients = ingredientTextView.text ?? ""
-        let instructions = instructionTextView.text
+//        let ingredients = ingredientTextView.text ?? ""
+//        let instructions = instructionTextView.text
         
     }
     
@@ -47,5 +47,7 @@ class RecipeViewController: UIViewController, UITextViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func unwindToRecipe(sender: UIStoryboardSegue) {
+    }
 }
