@@ -17,6 +17,7 @@ enum Unit {
     case cups
     case oz
     case lb
+    case unit
 }
 
 struct Ingredient {
@@ -26,9 +27,25 @@ struct Ingredient {
 }
 
 class Recipe {
+
     var instructions: [String] = []
     var ingredients: [Ingredient] = []
+
+
+func showUnitPicker(_ sender: UISwitch) {
+
+    }
+
 }
+
+let yeast = Ingredient(name: "Yeast", unit: .g, amount: 50)
+let water = Ingredient(name: "Water", unit: .ml, amount: 500)
+let flour = Ingredient(name: "Flour", unit: .kg, amount: 2)
+
+let bread = [yeast, water, flour]
+
+
+
 
 
 
