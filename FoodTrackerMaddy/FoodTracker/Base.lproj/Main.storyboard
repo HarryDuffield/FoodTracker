@@ -129,6 +129,14 @@
                                     <constraint firstItem="DAk-i6-AOh" firstAttribute="leading" secondItem="PAl-ZI-QUF" secondAttribute="leading" constant="20" id="ue8-an-5rM"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfJ-DK-8Jc">
+                                <rect key="frame" x="184" y="615" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Recipe"/>
+                                <connections>
+                                    <segue destination="BwR-im-5f2" kind="show" id="8qB-2x-2o0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -138,30 +146,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Meal" id="PIF-Vf-vBC">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1Tr-eb-AA9">
                             <connections>
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="ojW-Wv-oua"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="save" id="nVB-UN-ffW">
-                                <connections>
-                                    <segue destination="sFG-hA-TpU" kind="unwind" unwindAction="unwindToMealListWithSender:" id="M03-sU-mxb"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem style="plain" id="RNf-3d-cBQ">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9qK-fi-a7X">
-                                    <rect key="frame" x="163.5" y="502" width="47" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Recipe"/>
-                                </button>
-                                <connections>
-                                    <segue destination="BwR-im-5f2" kind="show" id="MgS-av-6HK"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nVB-UN-ffW">
+                            <connections>
+                                <segue destination="sFG-hA-TpU" kind="unwind" unwindAction="unwindToMealListWithSender:" id="M03-sU-mxb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="commentTextField" destination="DAk-i6-AOh" id="n98-8M-qD9"/>
                         <outlet property="nameTextField" destination="dip-4R-8nc" id="ozQ-jU-OK4"/>
@@ -283,9 +281,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xF9-aq-6S2"/>
-                        <connections>
-                            <outlet property="addInstruction" destination="pyX-tr-ktb" id="ABa-CK-VfW"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="2uF-Kx-p3f"/>
                 </viewController>
@@ -371,8 +366,9 @@
                                 <rect key="frame" x="0.0" y="88" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add ingredient" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ppv-MQ-pW9">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add ingredient" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ppv-MQ-pW9">
                                 <rect key="frame" x="20" y="156" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -380,8 +376,9 @@
                                     <action selector="addIngredientTextField:" destination="zMI-EP-He1" eventType="editingDidEnd" id="71q-2U-c1o"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How much of it?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXi-z9-Pp9">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How much of it?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXi-z9-Pp9">
                                 <rect key="frame" x="20" y="372" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -389,20 +386,23 @@
                                     <action selector="amountTextField:" destination="zMI-EP-He1" eventType="editingDidEnd" id="QQI-7C-VSv"/>
                                 </connections>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r9h-GA-nfz">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r9h-GA-nfz">
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Choose an ingredient" id="rh8-Lk-RAL"/>
                                 </items>
                             </navigationBar>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Xb-71-xsF">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Xb-71-xsF">
                                 <rect key="frame" x="0.0" y="310" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Choose an amount" id="JWb-7z-x0D"/>
                                 </items>
                             </navigationBar>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fWC-hr-ngZ">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fWC-hr-ngZ">
                                 <rect key="frame" x="0.0" y="515" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Unit" id="8NK-4h-oNP">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="JPn-SN-nza">
@@ -417,26 +417,22 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oqh-9z-TZM" customClass="Unit">
-                                <rect key="frame" x="0.0" y="583" width="414" height="91"/>
+                            <pickerView contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oqh-9z-TZM">
+                                <rect key="frame" x="20" y="592" width="374" height="82"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <accessibility key="accessibilityConfiguration">
                             <bool key="isElement" value="YES"/>
                         </accessibility>
-                        <constraints>
-                            <constraint firstItem="EXi-z9-Pp9" firstAttribute="top" secondItem="7Xb-71-xsF" secondAttribute="bottom" constant="8" id="DeT-2X-dTp"/>
-                            <constraint firstItem="Ppv-MQ-pW9" firstAttribute="top" secondItem="r9h-GA-nfz" secondAttribute="bottom" constant="8" id="Wnb-Wa-5cv"/>
-                            <constraint firstItem="oqh-9z-TZM" firstAttribute="top" secondItem="fWC-hr-ngZ" secondAttribute="bottom" constant="8" id="nVe-75-k9d"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="haU-0f-tP7"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1N-2O-wWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="zMI-EP-He1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2878" y="-335"/>
+            <point key="canvasLocation" x="2876.811594202899" y="-335.49107142857139"/>
         </scene>
     </scenes>
     <resources>
@@ -445,6 +441,6 @@
         <image name="edit instruction list" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aaw-w3-RHe"/>
+        <segue reference="sXr-mx-Fpl"/>
     </inferredMetricsTieBreakers>
 </document>
