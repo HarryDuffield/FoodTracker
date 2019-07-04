@@ -32,7 +32,7 @@ class Recipe {
     var ingredients: [Ingredient] = []
 
 
-func showUnitPicker(_ sender: UISwitch) {
+    func showUnitPicker(_ sender: UISwitch) {
 
     }
 

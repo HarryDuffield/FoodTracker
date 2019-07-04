@@ -22,12 +22,8 @@ class RecipeViewController: UIViewController, UINavigationControllerDelegate  {
     @IBAction func addInstructionButton(_ sender: UIBarButtonItem) {
     }
     @IBAction func unitSwitch(_ sender: UISwitch) {
-   //     if unitSwitch.on {
-    //        let unitPicker.isVisible -> Bool = true
-     //   }
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

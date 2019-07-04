@@ -16,6 +16,7 @@ class Meal: NSObject, NSCoding {
     var name: String
     var photo: UIImage?
     var rating: Int
+    var comment: String?
     
     
     //MARK Archiving paths
@@ -23,7 +24,7 @@ class Meal: NSObject, NSCoding {
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("meals")
     //MARK: Init
-    init?(name: String, photo: UIImage?, rating: Int) {
+    init?(name: String, photo: UIImage?, rating: Int, comment: String?) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -40,6 +41,7 @@ class Meal: NSObject, NSCoding {
         self.name = name
         self.photo = photo
         self.rating = rating
+        self.comment = comment
       
     }
         
@@ -50,6 +52,7 @@ class Meal: NSObject, NSCoding {
         static let name = "name"
         static let photo = "photo"
         static let rating = "rating"
+        static let comment = "comment"
        
         }
     
@@ -58,6 +61,7 @@ class Meal: NSObject, NSCoding {
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(photo, forKey: PropertyKey.photo)
         aCoder.encode(rating, forKey: PropertyKey.rating)
+        aCoder.encode(comment, forKey: PropertyKey.comment)
        
     }
     
@@ -72,9 +76,10 @@ class Meal: NSObject, NSCoding {
         // because photo is an optional property of Meal, just use conditional cast.
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
+        let comment = aDecoder.decodeObject(forKey: PropertyKey.comment) as? String
 
         
         // Must call designated initializer.
-        self.init(name: name, photo: photo, rating: rating)
+        self.init(name: name, photo: photo, rating: rating, comment: comment)
     }
 }

@@ -90,11 +90,11 @@
 			isa = PBXGroup;
 			children = (
 				C0CB51DB22CA07B200157F41 /* AppDelegate.swift */,
+				C01F3FA922CCFEDA002BF153 /* Recipe.swift */,
+				C01F3FAB22CDF040002BF153 /* RecipeViewController.swift */,
 				C0CB51DD22CA07B200157F41 /* MealViewController.swift */,
 				C0CB51FB22CA492A00157F41 /* RatingControl.swift */,
 				C0CB51FD22CB486900157F41 /* Meal.swift */,
-				C01F3FA922CCFEDA002BF153 /* Recipe.swift */,
-				C01F3FAB22CDF040002BF153 /* RecipeViewController.swift */,
 				C0CB51DF22CA07B200157F41 /* Main.storyboard */,
 				C0CB51FF22CB56DA00157F41 /* MealTableViewCell.swift */,
 				C0CB520122CB5ACA00157F41 /* MealTableViewController.swift */,

@@ -15,6 +15,8 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var recipeButton: UIBarButtonItem!
     /*
      This value is either passed be 'MealTableViewController' in 'prepare(for:sender:)'
      or constructed as part of adding a new meal
@@ -32,6 +34,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             nameTextField.text = meal.name
             photoImageView.image = meal.photo
             ratingControl.rating = meal.rating
+            commentTextField.text = meal.comment
         }
         
         // Enable the Save button only if the text field has a valid Meal name.
@@ -75,6 +78,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // disable the save button whilst editing
         saveButton.isEnabled = false
+        recipeButton.isEnabled = false
     }
     
     //MARK: Navigation
@@ -106,9 +110,10 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let name = nameTextField.text ?? ""
         let photo = photoImageView.image
         let rating = ratingControl.rating
+        let comment = commentTextField.text ?? ""
         
         // set the meal to be passed to MealTableViewController after the unwind segue.
-        meal = Meal(name: name, photo: photo, rating: rating)
+        meal = Meal(name: name, photo: photo, rating: rating, comment: comment)
     }
      //MARK: Actions
         @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
