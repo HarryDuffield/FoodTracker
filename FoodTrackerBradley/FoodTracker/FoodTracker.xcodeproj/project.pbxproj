@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091D60F622CDF03A0081BF4E /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D60F522CDF03A0081BF4E /* RecipeViewController.swift */; };
+		091D60FA22CDFEC00081BF4E /* IngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D60F922CDFEC00081BF4E /* IngredientViewController.swift */; };
+		091D60FC22CDFEFE0081BF4E /* IngredientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091D60FB22CDFEFE0081BF4E /* IngredientTableViewController.swift */; };
 		092B359A22CCE017007DA750 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092B359922CCE017007DA750 /* Recipe.swift */; };
 		09D3B24822CA07E700F6CDC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D3B24722CA07E700F6CDC4 /* AppDelegate.swift */; };
 		09D3B24A22CA07E700F6CDC4 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D3B24922CA07E700F6CDC4 /* MealViewController.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		091D60F522CDF03A0081BF4E /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		091D60F922CDFEC00081BF4E /* IngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientViewController.swift; sourceTree = "<group>"; };
+		091D60FB22CDFEFE0081BF4E /* IngredientTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewController.swift; sourceTree = "<group>"; };
 		092B359922CCE017007DA750 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		09D3B24422CA07E700F6CDC4 /* FoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D3B24722CA07E700F6CDC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,10 +100,13 @@
 				09D3B26F22CB67E600F6CDC4 /* MealTableViewController.swift */,
 				09D3B26D22CB629800F6CDC4 /* MealTableViewCell.swift */,
 				09D3B26B22CB5A0600F6CDC4 /* Meal.swift */,
+				092B359922CCE017007DA750 /* Recipe.swift */,
+				091D60F522CDF03A0081BF4E /* RecipeViewController.swift */,
+				091D60FB22CDFEFE0081BF4E /* IngredientTableViewController.swift */,
+				091D60F922CDFEC00081BF4E /* IngredientViewController.swift */,
 				09D3B24E22CA07E800F6CDC4 /* Assets.xcassets */,
 				09D3B25022CA07E800F6CDC4 /* LaunchScreen.storyboard */,
 				09D3B25322CA07E800F6CDC4 /* Info.plist */,
-				092B359922CCE017007DA750 /* Recipe.swift */,
 			);
 			path = FoodTracker;
 			sourceTree = "<group>";
@@ -214,8 +223,11 @@
 			files = (
 				09D3B26C22CB5A0600F6CDC4 /* Meal.swift in Sources */,
 				09D3B24A22CA07E700F6CDC4 /* MealViewController.swift in Sources */,
+				091D60FA22CDFEC00081BF4E /* IngredientViewController.swift in Sources */,
 				092B359A22CCE017007DA750 /* Recipe.swift in Sources */,
 				09D3B26A22CA4B0800F6CDC4 /* RatingControl.swift in Sources */,
+				091D60F622CDF03A0081BF4E /* RecipeViewController.swift in Sources */,
+				091D60FC22CDFEFE0081BF4E /* IngredientTableViewController.swift in Sources */,
 				09D3B24822CA07E700F6CDC4 /* AppDelegate.swift in Sources */,
 				09D3B27022CB67E600F6CDC4 /* MealTableViewController.swift in Sources */,
 				09D3B26E22CB629800F6CDC4 /* MealTableViewCell.swift in Sources */,
