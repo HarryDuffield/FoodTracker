@@ -126,22 +126,29 @@ class MealViewController: UIViewController , UITextFieldDelegate , UIImagePicker
         
         super.prepare(for: segue, sender: sender)
         
-        
-        
-        // Configure the destination view controller only when the save button is pressed.
-        guard let button = sender as? UIBarButtonItem, button === saveButton else {
-            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
-            return
+        if let ingredientsViewController = segue.destination as? IngredientTableViewController {
+            ingredientsViewController.MMeal = meal
+            ingredientsViewController.tableView.reloadData()
+        }
+        else {
+            
+            // Configure the destination view controller only when the save button is pressed.
+            guard let button = sender as? UIBarButtonItem, button === saveButton else {
+                os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+                return
+            }
+            
+            let name = nameTextField.text ?? ""
+            let photo = photoImageView.image
+            let rating = ratingControl.rating
+            let desc = descTextField.text
+            let recipe = ratingControl.currentR
+            
+            // Set the meal to be passed to MealTableViewController after the unwind segue.
+            meal = Meal(name: name, photo: photo, rating: rating, desc: desc ?? "", recipe: recipe)
         }
         
-        let name = nameTextField.text ?? ""
-        let photo = photoImageView.image
-        let rating = ratingControl.rating
-        let desc = descTextField.text
-        let recipe = ratingControl.currentR
-        
-        // Set the meal to be passed to MealTableViewController after the unwind segue.
-        meal = Meal(name: name, photo: photo, rating: rating, desc: desc ?? "", recipe: recipe)
+
         
     }
     

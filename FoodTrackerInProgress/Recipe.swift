@@ -21,16 +21,19 @@ enum Unit: String {
 class Ingredient: NSObject, NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
-//        aCoder.encode(unit, forKey: PropertyKey.unit)
         aCoder.encode(amount, forKey: PropertyKey.amount)
+        
+        if let unitString = unit?.rawValue {
+            aCoder.encode(unitString, forKey: PropertyKey.unit)
+        }
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
         let name = aDecoder.decodeObject(forKey: PropertyKey.name) as! String
-//        let name = aDecoder.decodeObject(forKey: PropertyKey.name) as! String
-        let amount = aDecoder.decodeInteger(forKey: PropertyKey.amount) 
+        let unitRaw = aDecoder.decodeObject(forKey: PropertyKey.name) as! String
+        let amount = aDecoder.decodeInteger(forKey: PropertyKey.amount)
 
-        self.init(name: name, unit: nil, amount: amount)
+        self.init(name: name, unit: Unit(rawValue: unitRaw), amount: amount)
     }
     
     var name: String
