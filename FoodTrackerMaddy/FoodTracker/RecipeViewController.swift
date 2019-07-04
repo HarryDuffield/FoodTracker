@@ -22,6 +22,7 @@ class RecipeViewController: UIViewController, UINavigationControllerDelegate, UI
     
     @IBAction func instructionEditingdidEnd(_ sender: Any) {
     }
+    
     var recipe: Recipe!
     override func viewDidLoad() {
         super.viewDidLoad()
