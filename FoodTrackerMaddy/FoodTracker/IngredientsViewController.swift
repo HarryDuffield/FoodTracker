@@ -12,7 +12,8 @@ class IngredientsViewController: UIViewController {
 
     @IBOutlet weak var addIngredientTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
-    @IBOutlet weak var addInstructionTextField: UITextField!
+    @IBOutlet weak var unitPicker: UIPickerView!
+    
         // Do any additional setup after loading the view.
     }
     

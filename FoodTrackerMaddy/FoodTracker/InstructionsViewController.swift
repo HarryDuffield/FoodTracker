@@ -9,7 +9,8 @@
 import UIKit
 
 class InstructionsViewController: UIViewController {
-
+    @IBOutlet weak var addInstructionTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

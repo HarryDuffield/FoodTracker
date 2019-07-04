@@ -16,7 +16,9 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var commentTextField: UITextField!
-    @IBOutlet weak var recipeButton: UIBarButtonItem!
+    @IBOutlet weak var recipeButton: UIButton!
+    
+
     /*
      This value is either passed be 'MealTableViewController' in 'prepare(for:sender:)'
      or constructed as part of adding a new meal
@@ -35,14 +37,14 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             photoImageView.image = meal.photo
             ratingControl.rating = meal.rating
             commentTextField.text = meal.comment
+            
+            
         }
         
         // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
     }
 
-    
-    
     //MARK:UITextFieldDelgate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
@@ -79,6 +81,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         // disable the save button whilst editing
         saveButton.isEnabled = false
         recipeButton.isEnabled = false
+        
     }
     
     //MARK: Navigation
@@ -101,8 +104,35 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     // this method lets you configure a view controller before it's presented
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         super.prepare(for: segue, sender: sender)
-        
-        // configure tthe destination view controller only when save button is pressed
+    
+        switch segue.identifier {
+        case "recipevc":
+            guard let recipe = segue.destination as? RecipeViewController else {
+                fatalError("Something went fatally wrong")
+            }
+        default:
+            break
+            
+        }
+        switch segue.identifier {
+        case "ing":
+            guard let recipe = segue.destination as? RecipeViewController else {
+                fatalError("Something went fatally wrong")
+            }
+        default:
+            break
+            
+        }
+        switch segue.identifier {
+        case "inst":
+            guard let recipe = segue.destination as? RecipeViewController else {
+                fatalError("Something went fatally wrong")
+            }
+        default:
+            break
+            
+        }
+        // configure the destination view controller only when save button is pressed
         guard let button = sender as? UIBarButtonItem, button === saveButton else{
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
@@ -112,8 +142,10 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let rating = ratingControl.rating
         let comment = commentTextField.text ?? ""
         
+        
         // set the meal to be passed to MealTableViewController after the unwind segue.
         meal = Meal(name: name, photo: photo, rating: rating, comment: comment)
+        
     }
      //MARK: Actions
         @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {

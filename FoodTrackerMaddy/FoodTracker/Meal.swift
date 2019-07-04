@@ -42,7 +42,7 @@ class Meal: NSObject, NSCoding {
         self.photo = photo
         self.rating = rating
         self.comment = comment
-      
+        
     }
         
         
@@ -53,6 +53,7 @@ class Meal: NSObject, NSCoding {
         static let photo = "photo"
         static let rating = "rating"
         static let comment = "comment"
+        
        
         }
     
@@ -62,7 +63,7 @@ class Meal: NSObject, NSCoding {
         aCoder.encode(photo, forKey: PropertyKey.photo)
         aCoder.encode(rating, forKey: PropertyKey.rating)
         aCoder.encode(comment, forKey: PropertyKey.comment)
-       
+        
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -77,7 +78,7 @@ class Meal: NSObject, NSCoding {
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
         let comment = aDecoder.decodeObject(forKey: PropertyKey.comment) as? String
-
+        
         
         // Must call designated initializer.
         self.init(name: name, photo: photo, rating: rating, comment: comment)
