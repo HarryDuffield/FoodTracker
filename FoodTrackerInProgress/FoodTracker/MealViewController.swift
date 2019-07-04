@@ -8,7 +8,7 @@
 import UIKit
 import os.log
 
-class MealViewController: UIViewController , UITextFieldDelegate , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+class MealViewController: UIViewController , UITextFieldDelegate , UIImagePickerControllerDelegate , UINavigationControllerDelegate{
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descTextField: UITextField!
@@ -24,6 +24,7 @@ class MealViewController: UIViewController , UITextFieldDelegate , UIImagePicker
      or constructed as part of adding a new meal.
      */
     var meal: Meal?
+    var YesMeal: Meal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +40,14 @@ class MealViewController: UIViewController , UITextFieldDelegate , UIImagePicker
             ratingControl.rating = meal.rating
             ratingControl.currentR = meal.recipe
             descTextField.text = meal.desc
+            YesMeal = meal
         }
         
         // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
+    }
+    func returnYesMeal() -> Meal {
+        return YesMeal
     }
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
