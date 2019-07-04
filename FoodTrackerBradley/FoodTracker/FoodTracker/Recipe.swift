@@ -14,10 +14,14 @@ class Recipe: NSObject {
     /*var quantity: Float = 0
     var unit: String = ""
     var ingredient: String = ""*/
+//    var quantity: Float = 0
+//    let units = [String]()
+//    let ingredients = [String]()
+//    let instructions = [String]()
     var quantity: Float = 0
-    let units = [String]()
-    let ingredients = [String]()
-    let instructions = [String]()
+    var units: String = ""
+    var ingredients: String = ""
+    var instructions: String = ""
     
     //MARK: Types
     struct PropertyKey {

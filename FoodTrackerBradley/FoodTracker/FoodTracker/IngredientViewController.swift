@@ -16,6 +16,14 @@ class IngredientViewController: UIViewController, UITextFieldDelegate, UINavigat
     //MARK: Properties
     @IBOutlet weak var ingredientTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        print(recipe?.ingredients)
+        let ingredients = ingredientTextField.text ?? ""
+        
+        recipe = Recipe(quantity: 0, units: "test", ingredients: ingredients)
+        print(recipe?.ingredients)
+        //dismiss
+    }
     
     var recipe: Recipe?
     
@@ -47,6 +55,14 @@ class IngredientViewController: UIViewController, UITextFieldDelegate, UINavigat
         print(recipe?.ingredients)
         
     }
+    
+    //MARK: UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //Hide the keyboard.
+        textField.resignFirstResponder()
+        return true
+    }
+    
     
     
     

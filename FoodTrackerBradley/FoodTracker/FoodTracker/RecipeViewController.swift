@@ -7,9 +7,50 @@
 //
 
 import UIKit
+import os.log
 
-class RecipeViewController: UIViewController, UITextViewDelegate {
+class RecipeViewController: /*UIViewController, UITextViewDelegate,*/ UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //Ingredients.count
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //Set ingredients label and stuff
+        let cell = UITableViewCell()
+        cell.textLabel
+        return UITableViewCell()
+    }
+    
+    //MARK: Properties
+    @IBOutlet weak var tableView: UITableView!
+    
+    var recipes = [Recipe]()
+    
+    //MARK: Actions
+    @IBAction func unwindToIngredientList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? IngredientViewController, let recipe = sourceViewController.recipe {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update existing ingredient
+                recipes[selectedIndexPath.row] = recipe
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            } else {
+                // Add new ingredient
+                let newIndexPath = IndexPath(row: recipes.count, section: 0)
+                
+                recipes.append(recipe)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+            //saveRecipes()
+            tableView.reloadData()
+        }
+    }
+    
+    //MARK: Private Methods
+    
+
+    /*
     //MARK: Properties
     @IBOutlet weak var ingredientTextView: UITextView!
     @IBOutlet weak var instructionTextView: UITextView!
@@ -50,4 +91,6 @@ class RecipeViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func unwindToRecipe(sender: UIStoryboardSegue) {
     }
+}
+*/
 }

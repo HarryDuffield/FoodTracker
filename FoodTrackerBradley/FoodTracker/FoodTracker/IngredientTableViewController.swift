@@ -10,6 +10,8 @@ import UIKit
 
 class IngredientTableViewController: UITableViewController {
     
+    //MARK: Properties
+    
     @IBOutlet var myTableView: UITableView! {
         didSet {
             myTableView.dataSource = self
@@ -19,6 +21,25 @@ class IngredientTableViewController: UITableViewController {
     var ingredients = [String]()
     var newIngredients: String = ""
     var recipe: Recipe?
+    var recipes = [Recipe]()
+    
+    //MARK: Actions
+    @IBAction func unwindToIngredientList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? IngredientViewController, let recipe = sourceViewController.recipe {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update existing recipe
+                recipes[selectedIndexPath.row] = recipe
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            else {
+                // Add a new meal.
+                let newIndexPath = IndexPath(row: recipes.count, section: 0)
+                
+                recipes.append(recipe)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
