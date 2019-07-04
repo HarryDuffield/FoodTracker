@@ -77,9 +77,9 @@
 		A4CF1F0C22CA07C900E4E1D8 = {
 			isa = PBXGroup;
 			children = (
-				A4974AF722CE09D80083E77B /* IngredientTableViewController.swift */,
 				A41CD53B22CCE80900D4ADF4 /* Recipe.swift */,
 				A4CF1F3822CA497C00E4E1D8 /* RatingControl.swift */,
+				A4974AF722CE09D80083E77B /* IngredientTableViewController.swift */,
 				A4CF1F1722CA07C900E4E1D8 /* FoodTracker */,
 				A4CF1F2C22CA07CB00E4E1D8 /* FoodTrackerTests */,
 				A4CF1F1622CA07C900E4E1D8 /* Products */,

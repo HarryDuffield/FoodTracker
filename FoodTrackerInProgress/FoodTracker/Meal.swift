@@ -20,7 +20,6 @@ class Meal: NSObject, NSCoding {
         static let rating = "rating"
         static let desc = "desc"
         static let recipe = "recipe"
-        
     }
     
     var name: String
@@ -52,12 +51,11 @@ class Meal: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
-        
+        aCoder.encode(recipe, forKey: PropertyKey.recipe)
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(photo, forKey: PropertyKey.photo)
         aCoder.encode(rating, forKey: PropertyKey.rating)
         aCoder.encode(desc, forKey: PropertyKey.desc)
-        aCoder.encode(recipe, forKey: PropertyKey.recipe)
         
     }
     
@@ -79,7 +77,7 @@ class Meal: NSObject, NSCoding {
         let recipe = aDecoder.decodeObject(forKey: PropertyKey.recipe) as? Recipe
         
         // Must call designated initializer.
-        self.init(name: name, photo: photo, rating: rating, desc: desc ?? "No Description", recipe: recipe ?? Recipe())
+        self.init(name: name, photo: photo, rating: rating, desc: desc ?? "No Description", recipe: recipe)
         
     }
     
