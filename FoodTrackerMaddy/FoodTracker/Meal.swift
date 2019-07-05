@@ -17,14 +17,16 @@ class Meal: NSObject, NSCoding {
     var photo: UIImage?
     var rating: Int
     var comment: String?
-    
+    var recipe: Recipe?
     
     //MARK Archiving paths
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("meals")
+    
+    
     //MARK: Init
-    init?(name: String, photo: UIImage?, rating: Int, comment: String?) {
+    init?(name: String, photo: UIImage?, rating: Int, comment: String?, recipe: Recipe?) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -42,7 +44,8 @@ class Meal: NSObject, NSCoding {
         self.photo = photo
         self.rating = rating
         self.comment = comment
-        
+        self.recipe = recipe
+    
     }
         
         
@@ -53,6 +56,7 @@ class Meal: NSObject, NSCoding {
         static let photo = "photo"
         static let rating = "rating"
         static let comment = "comment"
+        static let recipe = "recipe"
         
        
         }
@@ -63,6 +67,7 @@ class Meal: NSObject, NSCoding {
         aCoder.encode(photo, forKey: PropertyKey.photo)
         aCoder.encode(rating, forKey: PropertyKey.rating)
         aCoder.encode(comment, forKey: PropertyKey.comment)
+        aCoder.encode(recipe, forKey: PropertyKey.recipe)
         
     }
     
@@ -78,9 +83,10 @@ class Meal: NSObject, NSCoding {
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
         let comment = aDecoder.decodeObject(forKey: PropertyKey.comment) as? String
-        
-        
+        let recipe = aDecoder.decodeObject(forKey: PropertyKey.recipe) as? Recipe
+
         // Must call designated initializer.
-        self.init(name: name, photo: photo, rating: rating, comment: comment)
+        self.init(name: name, photo: photo, rating: rating, comment: comment, recipe: recipe)
     }
 }
+

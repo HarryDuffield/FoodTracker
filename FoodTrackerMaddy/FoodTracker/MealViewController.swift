@@ -37,6 +37,9 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             photoImageView.image = meal.photo
             ratingControl.rating = meal.rating
             commentTextField.text = meal.comment
+            ratingControl.currentR = meal.recipe
+            
+            
             
             
         }
@@ -107,23 +110,14 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
         switch segue.identifier {
         case "recipevc":
-            guard let recipe = segue.destination as? RecipeViewController else {
-                fatalError("Something went fatally wrong")
-            }
-        default:
-            break
             
-        }
-        switch segue.identifier {
+            if let recipeViewController = segue.destination as? RecipeViewController {
+                recipeViewController.recipe = meal?.recipe
+            }
         case "ing":
             guard let recipe = segue.destination as? RecipeViewController else {
                 fatalError("Something went fatally wrong")
             }
-        default:
-            break
-            
-        }
-        switch segue.identifier {
         case "inst":
             guard let recipe = segue.destination as? RecipeViewController else {
                 fatalError("Something went fatally wrong")
@@ -141,10 +135,14 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let photo = photoImageView.image
         let rating = ratingControl.rating
         let comment = commentTextField.text ?? ""
+        let recipe = ratingControl.currentR
+    
+      
+     
         
         
         // set the meal to be passed to MealTableViewController after the unwind segue.
-        meal = Meal(name: name, photo: photo, rating: rating, comment: comment)
+        meal = Meal(name: name, photo: photo, rating: rating, comment: comment, recipe: recipe) 
         
     }
      //MARK: Actions

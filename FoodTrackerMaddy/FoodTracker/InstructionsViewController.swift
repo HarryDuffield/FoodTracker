@@ -10,7 +10,10 @@ import UIKit
 
 class InstructionsViewController: UIViewController {
     @IBOutlet weak var addInstructionTextField: UITextField!
+    @IBOutlet weak var saveInstructionButton: UIBarButtonItem!
     
+    @IBAction func instructionEditingdidEnd(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

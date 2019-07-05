@@ -88,7 +88,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="PAl-ZI-QUF">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="PAl-ZI-QUF">
                                 <rect key="frame" x="20" y="108" width="374" height="499"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dip-4R-8nc">
@@ -107,7 +107,7 @@
                                             <outletCollection property="gestureRecognizers" destination="Lbw-YI-cdG" appends="YES" id="LdV-tf-0ly"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bPv-YM-dB5" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bPv-YM-dB5" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
                                         <rect key="frame" x="61" y="356" width="252" height="110"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="starCount">
@@ -118,7 +118,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a comment..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAk-i6-AOh">
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a comment..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAk-i6-AOh">
                                         <rect key="frame" x="20" y="469" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -180,38 +180,24 @@
             </objects>
             <point key="canvasLocation" x="1229" y="-335"/>
         </scene>
-        <!--Table View Controller-->
+        <!--IngredientTableViewController-->
         <scene sceneID="17P-O8-xGo">
             <objects>
-                <tableViewController id="uKK-Tv-Nx9" sceneMemberID="viewController">
+                <tableViewController title="IngredientTableViewController" id="uKK-Tv-Nx9" customClass="IngredientTableViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zLX-PK-qwK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="322"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tMZ-52-MZ8">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="320.5"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <prototypes>
-                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6kw-jP-Ag3">
-                                    <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientTableViewCell" id="Fp6-h1-MLg" customClass="IngredientTableViewCell" customModule="FoodTracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fp6-h1-MLg" id="zLb-rE-5vN">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6kw-jP-Ag3" id="eUu-QN-99N">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="amount, unit, ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vv6-ks-NuS">
-                                                <rect key="frame" x="28" y="11" width="374" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </tableViewCellContentView>
-                                </tableViewCell>
-                            </prototypes>
-                        </tableView>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="uKK-Tv-Nx9" id="Kda-3Q-lho"/>
                             <outlet property="delegate" destination="uKK-Tv-Nx9" id="IgF-O4-qV0"/>
@@ -220,7 +206,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJ6-nH-MVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2778" y="-889"/>
+            <point key="canvasLocation" x="2791" y="-799"/>
         </scene>
         <!--Recipe-->
         <scene sceneID="Moh-0D-VTZ">
@@ -241,7 +227,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="138" height="30"/>
                                                 <state key="normal" title="Add"/>
                                                 <connections>
-                                                    <segue destination="sXU-Vc-C8q" kind="show" id="pOc-LS-2QX"/>
+                                                    <segue destination="sXU-Vc-C8q" kind="show" id="Q5e-2i-XAa"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBV-GP-WqA">
@@ -325,46 +311,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jLP-kt-Ice">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Add an instruction" id="Tu9-5A-fuj"/>
-                                </items>
-                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add an instruction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebj-J6-1nc">
+                                <rect key="frame" x="137" y="101" width="140" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add instruction" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vpr-aZ-3hZ">
-                                <rect key="frame" x="20" y="148" width="374" height="30"/>
+                                <rect key="frame" x="20" y="130" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="addInstruction:" destination="bIp-dq-xbV" eventType="editingDidEnd" id="M4x-4l-nas"/>
+                                    <action selector="instructionEditingdidEnd:" destination="02u-no-ts1" eventType="editingDidEnd" id="HFy-wk-dec"/>
                                 </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rPl-JH-KO3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wcD-V2-9r9">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="0LG-rM-LIo">
+                            <connections>
+                                <segue destination="bIp-dq-xbV" kind="unwind" unwindAction="unwindToMealListWithSender:" id="WH5-ZN-Aub"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addInstructionTextField" destination="Vpr-aZ-3hZ" id="ZIL-YW-PKb"/>
+                        <outlet property="saveINstructionButton" destination="0LG-rM-LIo" id="PvA-BA-ZFc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2g3-xi-YF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bIp-dq-xbV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2877" y="395"/>
+            <point key="canvasLocation" x="2732" y="392"/>
         </scene>
-        <!--Table View Controller-->
+        <!--InstructionsTableViewCoontroller-->
         <scene sceneID="Y6c-c3-DbX">
             <objects>
-                <tableViewController id="2Mk-is-ukM" sceneMemberID="viewController">
+                <tableViewController title="InstructionsTableViewCoontroller" id="2Mk-is-ukM" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xwV-Q4-1LN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="322"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="EnA-17-oT4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="EnA-17-oT4" customClass="InstructionTableViewCell" customModule="FoodTracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EnA-17-oT4" id="Ij1-lu-WP8">
@@ -457,9 +452,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="amountTextField:" destination="sXU-Vc-C8q" eventType="editingDidEnd" id="Er5-fM-wik"/>
+                                    <action selector="amountEditingDidEndEditing:" destination="sXU-Vc-C8q" eventType="editingDidEnd" id="ncE-qt-oGd"/>
                                     <action selector="amountTextField:" destination="zMI-EP-He1" eventType="editingDidEnd" id="QQI-7C-VSv"/>
-                                    <action selector="instructionEditingdidEnd:" destination="sXU-Vc-C8q" eventType="editingDidEnd" id="Bd5-IY-vkY"/>
                                 </connections>
                             </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uje-st-4Dk">
@@ -495,17 +489,26 @@
                         <viewLayoutGuide key="safeArea" id="haU-0f-tP7"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fhl-sO-ddM">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="AZF-hW-vZa">
+                            <connections>
+                                <action selector="saveButton:" destination="sXU-Vc-C8q" id="Cwm-Eh-FXD"/>
+                                <segue destination="zMI-EP-He1" kind="unwind" unwindAction="unwindToMealListWithSender:" id="v5u-eq-ONB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addIngredientTextField" destination="Ppv-MQ-pW9" id="Zv0-dA-pp4"/>
                         <outlet property="amountTextField" destination="EXi-z9-Pp9" id="tTB-yt-jSd"/>
+                        <outlet property="saveIngredientInfoButton" destination="AZF-hW-vZa" id="Gdd-4g-1NR"/>
                         <outlet property="unitPicker" destination="uje-st-4Dk" id="w5l-KT-vEf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1N-2O-wWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="zMI-EP-He1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3006" y="-335"/>
+            <point key="canvasLocation" x="2788" y="-335"/>
         </scene>
     </scenes>
     <resources>

@@ -9,8 +9,11 @@
 import UIKit
 
 @IBDesignable class RatingControl: UIStackView {
+    
     //MARK: Properties
     private var ratingButtons = [UIButton]()
+    
+    var currentR: Recipe?
     
     var rating = 0 {
         didSet {

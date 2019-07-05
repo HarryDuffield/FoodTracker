@@ -16,46 +16,32 @@ class RecipeViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var editInstructionsButton: UIButton!
     @IBOutlet weak var addInstructionButton: UIButton!
 
-    
-    @IBAction func ingredientEditingdidEnd(_ sender: Any) {
-    }
-    
-    @IBAction func instructionEditingdidEnd(_ sender: Any) {
-    }
+    var ingredientTableViewController: IngredientTableViewController!
+
+    var ingredients = [Ingredient]()
     
     var recipe: Recipe!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    
-//        addIngredientTextField.text = recipe.ingredient
-//        amountTextField.text = recipe.amount
-
         
 
+        }
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        if let vc = sender.source as? IngredientsViewController {
+            guard let newIngredient = vc.ingredient else { return }
+            ingredients.append(newIngredient)
+            ingredientTableViewController.Ingredients = self.ingredients
+            ingredientTableViewController.tableView.reloadData()
+        }
         
-
-
-    
-
-        
-         // Do any additional setup after loading the view.
-    }
-    
-    // this method lets you configure a view controller before it's presented
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        super.prepare(for: segue, sender: sender)
         
     }
-    /*
-     // MARK: - Navigation
-     
-      In a storyboard-based application, you will often want to do a little preparation before navigation
-      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      Get the new view controller using segue.destination.
-      Pass the selected object to the new view controller.
-     }
-     */
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? IngredientTableViewController {
+            ingredientTableViewController = vc
+        }
+    }
     
   
 
