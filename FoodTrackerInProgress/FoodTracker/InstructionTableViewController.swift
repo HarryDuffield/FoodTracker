@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import os.log
 
 class InstructionTableViewController: UITableViewController {
 
@@ -45,14 +46,14 @@ class InstructionTableViewController: UITableViewController {
         
         let cellIdentifier = "InstructionTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? mealIngredientTableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? InstructionTableViewCell  else {
             fatalError("The dequeued cell is not an instance of mealIngredientViewCell.")
         }
         
         // Fetches the appropriate meal for the data source layout.
         let instruction = Minstructions[indexPath.row]
         
-        //cell.InstructionText.text = instruction
+        cell.InstructionText.text = instruction
         
         return cell
     }

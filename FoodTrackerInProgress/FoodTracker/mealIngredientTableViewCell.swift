@@ -5,6 +5,9 @@ class mealIngredientTableViewCell: UITableViewCell {
     //MARK: Properties
     
     @IBOutlet weak var IngredientText: UITextView!
+    @IBOutlet weak var UnitText: UITextView!
+    @IBOutlet weak var AmountText: UITextView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

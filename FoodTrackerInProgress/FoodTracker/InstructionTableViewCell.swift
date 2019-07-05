@@ -1,10 +1,3 @@
-//
-//  InstructionTableViewCell.swift
-//  FoodTracker
-//
-//  Created by  on 04/07/2019.
-//
-
 import UIKit
 
 class InstructionTableViewCell: UITableViewCell {

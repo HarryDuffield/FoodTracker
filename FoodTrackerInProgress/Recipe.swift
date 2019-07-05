@@ -8,14 +8,14 @@
 import UIKit
 
 enum Unit: String {
-    case kg
-    case g
-    case l
-    case ml
-    case tblsp
-    case cups
-    case oz
-    case lb
+    case kg = "kg"
+    case g = "g"
+    case l = "l"
+    case ml = "ml"
+    case tblsp = "tblsp"
+    case cups = "cups"
+    case oz = "oz"
+    case lb = "lb"
 }
 
 class Ingredient: NSObject, NSCoding {
