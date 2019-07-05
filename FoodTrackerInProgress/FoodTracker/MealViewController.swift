@@ -18,6 +18,28 @@ class MealViewController: UIViewController , UITextFieldDelegate , UIImagePicker
     @IBOutlet weak var recipeText: UILabel!
     @IBOutlet weak var AddButton: UIButton!
     @IBOutlet weak var DeleteRecipeButton: UIButton!
+    @IBOutlet weak var InstructionTableViewObject: UIView!
+    
+    
+    
+    
+//    var secondVC : InstructionTableViewController = InstructionTableViewController()
+//    secondVC.delegate = self
+//    SecondVC.callFromOtherClass() // This will call the method in the secondClass
+//    // which will then ask its delegate to trigger a method valueChanged() -
+//    // Who is the delegate? Well, your firstClass, so you better implement
+//    // this method!
+//
+//
+    
+    
+    
+//    func valueChanged() -> CGFloat {
+//        return meal // which is 5 in your case (value taken from a question)
+//    }
+    
+    
+    
     
     /*
      This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
@@ -130,6 +152,12 @@ class MealViewController: UIViewController , UITextFieldDelegate , UIImagePicker
             ingredientsViewController.MMeal = meal
             ingredientsViewController.tableView.reloadData()
         }
+            
+        else if let ingredientsViewController = segue.destination as? InstructionTableViewController {
+            ingredientsViewController.MMeal = meal
+            ingredientsViewController.tableView.reloadData()
+        }
+            
         else {
             
             // Configure the destination view controller only when the save button is pressed.
@@ -158,6 +186,21 @@ class MealViewController: UIViewController , UITextFieldDelegate , UIImagePicker
         // Disable the Save button if the text field is empty.
         let text = nameTextField.text ?? ""
         saveButton.isEnabled = !text.isEmpty
+    }
+    
+    //MARK: Actions
+    @IBAction func AddInstruction(_ sender: UIButton) {
+        
+        meal?.recipe?.instructions.append(" ")
+
+    }
+    @IBAction func DeleteInstruction(_ sender: UIButton) {
+    }
+    @IBAction func AddIngredient(_ sender: UIButton) {
+        meal?.recipe?.ingredients.append(Ingredient(name: " ", unit: nil, amount: 0))
+        
+    }
+    @IBAction func DeleteIngredient(_ sender: UIButton) {
     }
     
 }

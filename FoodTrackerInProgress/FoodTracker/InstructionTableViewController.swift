@@ -8,11 +8,16 @@
 import UIKit
 import os.log
 
+protocol InformingDelegate {
+    func valueChanged() -> CGFloat
+}
+
+
 class InstructionTableViewController: UITableViewController {
 
     //MARK: Properties
     
-    
+    var delegate: InformingDelegate?
     
     var MMeal: Meal! {
         didSet {
@@ -37,6 +42,10 @@ class InstructionTableViewController: UITableViewController {
         
         return 1
     }
+    
+//    func callFromOtherClass() {
+//        MMeal = self.delegate?.valueChanged()
+//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Minstructions.count
@@ -103,4 +112,12 @@ class InstructionTableViewController: UITableViewController {
      }
      */
     
+    //MARK: Actions
+    
+//    var delegate: InformingDelegate?
+//
+//    func callFromOtherClass() {
+//        value = self.delegate?.valueChanged()
+//    }
+//
 }
