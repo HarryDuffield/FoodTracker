@@ -88,7 +88,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="PAl-ZI-QUF">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="PAl-ZI-QUF">
                                 <rect key="frame" x="20" y="108" width="374" height="499"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dip-4R-8nc">
@@ -107,7 +107,7 @@
                                             <outletCollection property="gestureRecognizers" destination="Lbw-YI-cdG" appends="YES" id="LdV-tf-0ly"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bPv-YM-dB5" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bPv-YM-dB5" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
                                         <rect key="frame" x="61" y="356" width="252" height="110"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="starCount">
@@ -118,7 +118,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a comment..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAk-i6-AOh">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a comment..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAk-i6-AOh">
                                         <rect key="frame" x="20" y="469" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -195,7 +195,38 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fp6-h1-MLg" id="zLb-rE-5vN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H49-2Q-fNh" userLabel="AmountLabel">
+                                            <rect key="frame" x="40" y="11" width="60" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Unit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppD-X5-7Vz" userLabel="UnitLabel">
+                                            <rect key="frame" x="113" y="12" width="32" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2F-o3-uF2" userLabel="NameLabel">
+                                            <rect key="frame" x="165" y="12" width="45" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="k2F-o3-uF2" firstAttribute="leading" secondItem="ppD-X5-7Vz" secondAttribute="trailing" constant="20" id="1CS-HK-a4Z"/>
+                                        <constraint firstItem="H49-2Q-fNh" firstAttribute="leading" secondItem="zLb-rE-5vN" secondAttribute="leadingMargin" constant="20" id="6BM-ix-NKb"/>
+                                        <constraint firstItem="ppD-X5-7Vz" firstAttribute="leading" secondItem="H49-2Q-fNh" secondAttribute="trailing" constant="15" id="Gtf-Bz-qsJ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="k2F-o3-uF2" secondAttribute="trailing" constant="20" id="Y4O-OH-tsL"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="AmountLabel" destination="H49-2Q-fNh" id="81R-dR-iIC"/>
+                                    <outlet property="NameLabel" destination="k2F-o3-uF2" id="s49-0C-gtP"/>
+                                    <outlet property="UnitLabel" destination="ppD-X5-7Vz" id="hma-3j-tEq"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -336,13 +367,13 @@
                     <navigationItem key="navigationItem" id="wcD-V2-9r9">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="0LG-rM-LIo">
                             <connections>
-                                <segue destination="bIp-dq-xbV" kind="unwind" unwindAction="unwindToMealListWithSender:" id="WH5-ZN-Aub"/>
+                                <segue destination="bIp-dq-xbV" kind="unwind" unwindAction="unwindToMealListWithSender:" id="LgU-M0-QE1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addInstructionTextField" destination="Vpr-aZ-3hZ" id="ZIL-YW-PKb"/>
-                        <outlet property="saveINstructionButton" destination="0LG-rM-LIo" id="PvA-BA-ZFc"/>
+                        <outlet property="saveInstructionButton" destination="0LG-rM-LIo" id="Pbu-HG-9N8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2g3-xi-YF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -350,10 +381,10 @@
             </objects>
             <point key="canvasLocation" x="2732" y="392"/>
         </scene>
-        <!--InstructionsTableViewCoontroller-->
+        <!--InstructionsTableViewController-->
         <scene sceneID="Y6c-c3-DbX">
             <objects>
-                <tableViewController title="InstructionsTableViewCoontroller" id="2Mk-is-ukM" sceneMemberID="viewController">
+                <tableViewController title="InstructionsTableViewController" id="2Mk-is-ukM" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xwV-Q4-1LN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="322"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -375,6 +406,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textLabel" destination="rHe-hv-Fab" id="7hp-Gt-ciQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -515,6 +549,6 @@
         <image name="defaultPhoto" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aaw-w3-RHe"/>
+        <segue reference="sXr-mx-Fpl"/>
     </inferredMetricsTieBreakers>
 </document>

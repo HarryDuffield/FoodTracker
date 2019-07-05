@@ -17,6 +17,67 @@ enum Unit: String, CaseIterable {
     case oz
     case lb
 }
+class Instruction: NSObject, NSCoding {
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(instruction, forKey: PropertyKey.instruction)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let instruction = aDecoder.decodeObject(forKey: PropertyKey.instruction) as! String
+
+        
+        self.init(instruction: instruction)
+    }
+    
+    var instruction: String?
+    
+    struct PropertyKey {
+        static let instruction = "instruction"
+      
+    }
+    
+    init(instruction: String?) {
+        self.instruction = instruction
+
+    }
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("Instruction")
+    
+}
+
+class Recipe: NSObject, NSCoding {
+    
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("recipe")
+    
+    struct PropertyKey {
+        static let instructions = "instructions"
+        static let ingredients = "ingredients"
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(instructions, forKey: PropertyKey.instructions)
+        aCoder.encode(ingredients, forKey: PropertyKey.ingredients)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let instructions = aDecoder.decodeObject(forKey: PropertyKey.instructions) as! [String]
+        let ingredients = aDecoder.decodeObject(forKey: PropertyKey.ingredients) as! [Ingredient]
+        
+        self.init(instructions: instructions, ingredients: ingredients)
+    }
+    
+    init(instructions: [String], ingredients: [Ingredient]) {
+        self.ingredients = ingredients
+        self.instructions = instructions
+    }
+    
+    var instructions: [String] = []
+    var ingredients: [Ingredient] = []
+    
+    
+    //MARK: Init
+}
 
 class Ingredient: NSObject, NSCoding {
     func encode(with aCoder: NSCoder) {
@@ -56,37 +117,4 @@ class Ingredient: NSObject, NSCoding {
     
 }
 
-class Recipe: NSObject, NSCoding {
-    
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("recipe")
-    
-    struct PropertyKey {
-        static let instructions = "instructions"
-        static let ingredients = "ingredients"
-    }
-    
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(instructions, forKey: PropertyKey.instructions)
-        aCoder.encode(ingredients, forKey: PropertyKey.ingredients)
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        let instructions = aDecoder.decodeObject(forKey: PropertyKey.instructions) as! [String]
-        let ingredients = aDecoder.decodeObject(forKey: PropertyKey.ingredients) as! [Ingredient]
-        
-        self.init(instructions: instructions, ingredients: ingredients)
-    }
-    
-    init(instructions: [String], ingredients: [Ingredient]) {
-        self.ingredients = ingredients
-        self.instructions = instructions
-    }
-    
-    var instructions: [String] = []
-    var ingredients: [Ingredient] = []
-    
-  
-    //MARK: Init
-}
 

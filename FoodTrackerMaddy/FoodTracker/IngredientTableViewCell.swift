@@ -9,10 +9,13 @@
 import UIKit
 
 class IngredientTableViewCell: UITableViewCell {
+    @IBOutlet weak var AmountLabel: UILabel!
+    @IBOutlet weak var UnitLabel: UILabel!
+    @IBOutlet weak var NameLabel: UILabel!
     
     //MARK: Properties
     
-    @IBOutlet weak var IngredientText: UITextView!
+   
     
     override func awakeFromNib() {
         super.awakeFromNib()

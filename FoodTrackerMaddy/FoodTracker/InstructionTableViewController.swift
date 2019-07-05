@@ -16,10 +16,10 @@ class InstructionTableViewController: UITableViewController {
     
     var MMeal: Meal! {
         didSet {
-            self.Minstructions = self.MMeal.recipe?.instructions ?? []
+            self.Instructions = self.MMeal.recipe?.instructions ?? []
         }
     }
-    var Minstructions = [String]()
+    var Instructions = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class InstructionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Minstructions.count
+        return Instructions.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,10 +51,11 @@ class InstructionTableViewController: UITableViewController {
         }
         
         // Fetches the appropriate meal for the data source layout.
-        let instruction = Minstructions[indexPath.row]
         
+
+        let instruction = Instructions[indexPath.row]
         //cell.InstructionText.text = instruction
-        
+        cell.textLabel?.text = instruction
         return cell
     }
     

@@ -10,6 +10,7 @@
 import UIKit
 
 class InstructionTableViewCell: UITableViewCell {
+    @IBOutlet weak var TextLabel: UILabel!
     
     //MARK: Properties
 

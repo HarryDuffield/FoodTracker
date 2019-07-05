@@ -34,6 +34,9 @@ class RecipeViewController: UIViewController, UINavigationControllerDelegate, UI
             ingredientTableViewController.tableView.reloadData()
         }
         
+        else if let vc = sender.source as? InstructionsViewController {
+            guard let newInstruction = vc.instruction
+        }
         
     }
 

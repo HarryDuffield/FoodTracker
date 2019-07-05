@@ -50,12 +50,7 @@ class IngredientsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         addIngredientTextField.delegate = self as? UITextFieldDelegate
         amountTextField.delegate = self as? UITextFieldDelegate
     
-//        if let ingredient = ingredient {
-//            addIngredientTextField.text = ingredient.name
-//            amountTextField.text = "\(ingredient.amount)"
-//
-//
-//        }
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

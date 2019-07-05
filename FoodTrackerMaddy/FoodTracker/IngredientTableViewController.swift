@@ -51,8 +51,9 @@ class IngredientTableViewController: UITableViewController {
         
         let ingredient = Ingredients[indexPath.row]
         
-        cell.textLabel?.text = ingredient.name
-        
+        cell.NameLabel?.text = ingredient.name
+        cell.AmountLabel?.text = "\(ingredient.amount)"
+        cell.UnitLabel?.text = ingredient.unit?.rawValue
         return cell
     }
 

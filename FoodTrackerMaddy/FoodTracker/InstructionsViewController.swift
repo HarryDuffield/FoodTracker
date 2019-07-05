@@ -8,27 +8,46 @@
 
 import UIKit
 
-class InstructionsViewController: UIViewController {
+class InstructionsViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var addInstructionTextField: UITextField!
     @IBOutlet weak var saveInstructionButton: UIBarButtonItem!
     
     @IBAction func instructionEditingdidEnd(_ sender: Any) {
     }
+    
+    var instruction: String?
+    
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        addInstructionTextField.delegate = self as? UITextFieldDelegate
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+//        if let vc = sender.source as? InstructionsViewController {
+//            guard let newInstruction = vc.instruction else { return }
+//            instruction.append(newInstruction)
+//            InstructionTableViewController.Instructions = self.instruction
+//            InstructionTableViewController.tableView.reloadData()
+//        }
+//
+//
+//    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let vc = segue.destination as? InstructionsViewController {
+//            InstructionTableViewController = vc
+//        }
+//    }
+    
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        instruction = textField.text
+        return true
     }
-    */
 
 }
