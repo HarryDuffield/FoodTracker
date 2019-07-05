@@ -23,7 +23,7 @@ class InstructionsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addInstructionTextField.delegate = self as? UITextFieldDelegate
+        addInstructionTextField.delegate = self as UITextFieldDelegate
         // Do any additional setup after loading the view.
     }
     
@@ -44,10 +44,11 @@ class InstructionsViewController: UIViewController, UITextFieldDelegate {
 //        }
 //    }
     
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        instruction = textField.text
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        instruction = addInstructionTextField.text
         return true
     }
+    
+
 
 }

@@ -16,27 +16,26 @@ enum Unit: String, CaseIterable {
     case cups
     case oz
     case lb
+    case x
 }
 class Instruction: NSObject, NSCoding {
+    var instruction: [String?]
     func encode(with aCoder: NSCoder) {
         aCoder.encode(instruction, forKey: PropertyKey.instruction)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        let instruction = aDecoder.decodeObject(forKey: PropertyKey.instruction) as! String
-
-        
-        self.init(instruction: instruction)
+        let instruction = aDecoder.decodeObject(forKey: PropertyKey.instruction) as? String
+        self.init(instruction: [instruction])
     }
     
-    var instruction: String?
     
     struct PropertyKey {
         static let instruction = "instruction"
       
     }
     
-    init(instruction: String?) {
+    init(instruction: [String?]) {
         self.instruction = instruction
 
     }
@@ -61,18 +60,18 @@ class Recipe: NSObject, NSCoding {
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        let instructions = aDecoder.decodeObject(forKey: PropertyKey.instructions) as! [String]
+        guard let instructions = aDecoder.decodeObject(forKey: PropertyKey.instructions) as? [String] else { return nil }
         let ingredients = aDecoder.decodeObject(forKey: PropertyKey.ingredients) as! [Ingredient]
         
         self.init(instructions: instructions, ingredients: ingredients)
     }
     
-    init(instructions: [String], ingredients: [Ingredient]) {
+    init(instructions: [String?], ingredients: [Ingredient]) {
         self.ingredients = ingredients
         self.instructions = instructions
     }
     
-    var instructions: [String] = []
+    var instructions: [String?] = []
     var ingredients: [Ingredient] = []
     
     

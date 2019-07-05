@@ -14,12 +14,8 @@ class InstructionTableViewController: UITableViewController {
     
     
     
-    var MMeal: Meal! {
-        didSet {
-            self.Instructions = self.MMeal.recipe?.instructions ?? []
-        }
-    }
-    var Instructions = [String]()
+    
+    var Instructions = [String?]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +42,7 @@ class InstructionTableViewController: UITableViewController {
         
         let cellIdentifier = "InstructionTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? IngredientTableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? InstructionTableViewCell  else {
             fatalError("The dequeued cell is not an instance of IngredientViewCell.")
         }
         
@@ -59,13 +55,13 @@ class InstructionTableViewController: UITableViewController {
         return cell
     }
     
-    /*
+    
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
+      //Return false if you do not want the specified item to be editable.
      return true
      }
-     */
+    
     
     /*
      // Override to support editing the table view.

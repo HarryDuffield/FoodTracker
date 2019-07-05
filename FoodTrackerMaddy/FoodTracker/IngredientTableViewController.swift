@@ -13,11 +13,7 @@ class IngredientTableViewController: UITableViewController {
     
     //MARK: Properties
     
-    var MMeal: Meal! {
-        didSet {
-            self.Ingredients = self.MMeal.recipe?.ingredients ?? []
-        }
-    }
+
     var Ingredients = [Ingredient]()
     
     override func viewDidLoad() {

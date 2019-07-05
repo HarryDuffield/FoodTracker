@@ -104,6 +104,13 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
     }
     
+    @IBAction
+    func unwindToMeal(sender: UIStoryboardSegue) {
+        if let vc = sender.source as? RecipeViewController {
+            meal?.recipe = vc.recipe
+        }
+    }
+    
     // this method lets you configure a view controller before it's presented
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         super.prepare(for: segue, sender: sender)
@@ -112,7 +119,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         case "recipevc":
             
             if let recipeViewController = segue.destination as? RecipeViewController {
-                recipeViewController.recipe = meal?.recipe
+                recipeViewController.setupWith(meal?.recipe)
             }
         case "ing":
             guard let recipe = segue.destination as? RecipeViewController else {
